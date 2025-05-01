@@ -44,7 +44,7 @@ const FinancialCalculator = () => {
                 max={10000}
                 step={100}
                 className="my-2"
-                colorClass="bg-emerald-500"
+                colorClass="bg-[#F43F5F]"
                 onValueChange={(value) => setInitialInvestment(value[0])}
               />
             </div>
@@ -61,7 +61,7 @@ const FinancialCalculator = () => {
                 max={2000}
                 step={10}
                 className="my-2"
-                colorClass="bg-amber-500"
+                colorClass="bg-[#F43F5F]"
                 onValueChange={(value) => setMonthlyContribution(value[0])}
               />
             </div>
@@ -78,7 +78,7 @@ const FinancialCalculator = () => {
                 max={50}
                 step={1}
                 className="my-2"
-                colorClass="bg-rose-500"
+                colorClass="bg-[#F43F5F]"
                 onValueChange={(value) => setStartingAge(value[0])}
               />
             </div>
