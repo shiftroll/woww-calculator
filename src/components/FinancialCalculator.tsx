@@ -22,24 +22,21 @@ const FinancialCalculator = () => {
   }, [initialInvestment, monthlyContribution, startingAge]);
 
   return (
-    <Card className="w-full max-w-3xl mx-auto border-slate-700 bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl">
+    <Card className="w-full mx-auto border-[#3E3F37] bg-[#31322C] text-gray-200 shadow-xl">
       <CardHeader className="pb-2 text-center">
-        <CardTitle className="text-2xl md:text-3xl font-bold text-gray-100 px-4 mt-2">
-          See what your financial future would look like,
-          <br /> assuming the fund's future performance is the same
-          <br /> as it has been for the past 11 years.*
+        <CardTitle className="text-xl md:text-2xl font-bold text-gray-100 px-2 mt-2">
+          Financial Future Calculator
         </CardTitle>
-        <p className="text-xs md:text-sm text-gray-300 px-6 pb-4">
-          *The calculator is based on the Snobol fund's average annual return of 32.08%.
-          Past performance never guarantees future performance, but it is better than nothing.
+        <p className="text-xs md:text-sm text-gray-300 px-4 pb-2">
+          Based on Snobol fund's average annual return of 32.08%
         </p>
       </CardHeader>
 
-      <CardContent className="px-6 pb-8">
-        <div className="space-y-8 mt-2">
+      <CardContent className="px-4 pb-6">
+        <div className="space-y-6 mt-2">
           {/* Initial Investment Slider */}
-          <div className="flex items-center gap-4">
-            <div className="w-32 text-xl md:text-2xl font-bold">Initial $</div>
+          <div className="flex items-center gap-2">
+            <div className="w-24 text-base md:text-lg font-bold">Initial</div>
             <div className="flex-1">
               <Slider
                 value={[initialInvestment]}
@@ -47,15 +44,16 @@ const FinancialCalculator = () => {
                 max={10000}
                 step={100}
                 className="my-2"
+                colorClass="bg-emerald-500"
                 onValueChange={(value) => setInitialInvestment(value[0])}
               />
             </div>
-            <div className="w-24 text-right text-xl md:text-2xl font-semibold">${initialInvestment.toLocaleString()}</div>
+            <div className="w-20 text-right text-base md:text-lg font-semibold">${initialInvestment.toLocaleString()}</div>
           </div>
 
           {/* Monthly Contribution Slider */}
-          <div className="flex items-center gap-4">
-            <div className="w-32 text-xl md:text-2xl font-bold">Monthly $</div>
+          <div className="flex items-center gap-2">
+            <div className="w-24 text-base md:text-lg font-bold">Monthly</div>
             <div className="flex-1">
               <Slider
                 value={[monthlyContribution]}
@@ -63,15 +61,16 @@ const FinancialCalculator = () => {
                 max={2000}
                 step={10}
                 className="my-2"
+                colorClass="bg-amber-500"
                 onValueChange={(value) => setMonthlyContribution(value[0])}
               />
             </div>
-            <div className="w-24 text-right text-xl md:text-2xl font-semibold">${monthlyContribution}</div>
+            <div className="w-20 text-right text-base md:text-lg font-semibold">${monthlyContribution}</div>
           </div>
 
           {/* Starting Age Slider */}
-          <div className="flex items-center gap-4">
-            <div className="w-32 text-xl md:text-2xl font-bold">Starting age</div>
+          <div className="flex items-center gap-2">
+            <div className="w-24 text-base md:text-lg font-bold">Age</div>
             <div className="flex-1">
               <Slider
                 value={[startingAge]}
@@ -79,15 +78,16 @@ const FinancialCalculator = () => {
                 max={50}
                 step={1}
                 className="my-2"
+                colorClass="bg-rose-500"
                 onValueChange={(value) => setStartingAge(value[0])}
               />
             </div>
-            <div className="w-24 text-right text-xl md:text-2xl font-semibold">{startingAge}</div>
+            <div className="w-20 text-right text-base md:text-lg font-semibold">{startingAge}</div>
           </div>
 
           {/* Wealth Levels Display */}
-          <div className="mt-6 pt-4 border-t border-slate-700">
-            <div className="mb-2 text-xl md:text-2xl font-bold">Your wealth levels:</div>
+          <div className="mt-4 pt-4 border-t border-[#45463E]">
+            <div className="mb-2 text-lg md:text-xl font-bold">Results:</div>
             <WealthLevels hnwiAge={hnwiAge} vhnwiAge={vhnwiAge} uhnwiAge={uhnwiAge} />
           </div>
         </div>

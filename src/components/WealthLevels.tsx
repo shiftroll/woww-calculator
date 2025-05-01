@@ -9,42 +9,39 @@ interface WealthLevelsProps {
 
 const WealthLevels: React.FC<WealthLevelsProps> = ({ hnwiAge, vhnwiAge, uhnwiAge }) => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* High Net Worth Individual */}
       <div className="flex flex-col">
         <div className="flex items-baseline">
-          <h2 className="text-3xl md:text-5xl font-bold">HNWI: Age {hnwiAge || "—"}</h2>
+          <h2 className="text-lg md:text-2xl font-bold">HNWI: Age {hnwiAge || "—"}</h2>
         </div>
-        <div className="text-gray-300">
-          <div className="text-sm md:text-base">High-net-worth individual</div>
-          <div className="text-sm md:text-base">Net worth $1 million</div>
+        <div className="text-gray-300 text-xs md:text-sm">
+          <div>High-net-worth: $1 million</div>
         </div>
       </div>
 
       {/* Very High Net Worth Individual */}
       <div className="flex flex-col">
         <div className="flex items-baseline">
-          <h2 className="text-3xl md:text-5xl font-bold">VHNWI: Age {vhnwiAge || "—"}</h2>
+          <h2 className="text-lg md:text-2xl font-bold">VHNWI: Age {vhnwiAge || "—"}</h2>
         </div>
-        <div className="text-gray-300">
-          <div className="text-sm md:text-base">Very-high-net-worth individual</div>
-          <div className="text-sm md:text-base">Net worth $5 million</div>
+        <div className="text-gray-300 text-xs md:text-sm">
+          <div>Very-high-net-worth: $5 million</div>
         </div>
       </div>
 
       {/* Ultra High Net Worth Individual */}
       <div className="flex flex-col">
         <div className="flex items-baseline">
-          <h2 className="text-3xl md:text-5xl font-bold">UHNWI: Age {uhnwiAge || "—"}</h2>
+          <h2 className="text-lg md:text-2xl font-bold">UHNWI: Age {uhnwiAge || "—"}</h2>
         </div>
-        <div className="text-gray-300">
-          <div className="text-sm md:text-base">Ultra-high-net-worth individual</div>
-          <div className="text-sm md:text-base">Net worth $30 million</div>
+        <div className="text-gray-300 text-xs md:text-sm">
+          <div>Ultra-high-net-worth: $30 million</div>
         </div>
       </div>
 
-      <div className="pt-4 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-widest">JOIN THE MOVEMENT.</h2>
+      <div className="pt-2 text-center">
+        <h2 className="text-base md:text-xl font-bold">JOIN THE MOVEMENT</h2>
       </div>
     </div>
   );
