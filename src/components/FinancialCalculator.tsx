@@ -1,11 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import WealthLevels from './WealthLevels';
 import { calculateFutureWealth } from '@/lib/financialUtils';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const FinancialCalculator = () => {
   const [initialInvestment, setInitialInvestment] = useState(2500);
   const [monthlyContribution, setMonthlyContribution] = useState(450);
@@ -22,11 +20,9 @@ const FinancialCalculator = () => {
     setVhnwiAge(result.vhnwiAge);
     setUhnwiAge(result.uhnwiAge);
   }, [initialInvestment, monthlyContribution, startingAge]);
-
-  return (
-    <Card className="w-full mx-auto border-[#3E3F37] bg-[#31322C] text-gray-200 shadow-xl">
+  return <Card className="w-full mx-auto border-[#3E3F37] bg-[#31322C] text-gray-200 shadow-xl">
       <CardHeader className="pb-2 text-center">
-        <CardTitle className="text-xl md:text-2xl font-bold text-gray-100 px-2 mt-2">
+        <CardTitle className="text-xl font-bold text-gray-100 px-2 mt-2 md:text-3xl">
           Financial Future Calculator
         </CardTitle>
         <p className="text-xs md:text-sm text-gray-300 px-4 pb-2">
@@ -34,118 +30,58 @@ const FinancialCalculator = () => {
         </p>
       </CardHeader>
 
-      <CardContent className="px-4 pb-6">
+      <CardContent className="px-4 pb-6 py-[16px]">
         <div className="space-y-6 mt-2">
           {/* Initial Investment Slider */}
-          {isMobile ? (
-            <div className="space-y-2">
+          {isMobile ? <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">Initial</div>
                 <div className="text-base font-semibold">${initialInvestment.toLocaleString()}</div>
               </div>
               <div>
-                <Slider
-                  value={[initialInvestment]}
-                  min={1000}
-                  max={10000}
-                  step={100}
-                  className="my-2"
-                  colorClass="bg-[#F43F5F]"
-                  onValueChange={(value) => setInitialInvestment(value[0])}
-                />
+                <Slider value={[initialInvestment]} min={1000} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setInitialInvestment(value[0])} />
               </div>
-            </div>
-          ) : (
-            <div className="flex items-center gap-2">
+            </div> : <div className="flex items-center gap-2">
               <div className="w-24 text-base md:text-lg font-bold">Initial</div>
               <div className="flex-1">
-                <Slider
-                  value={[initialInvestment]}
-                  min={1000}
-                  max={10000}
-                  step={100}
-                  className="my-2"
-                  colorClass="bg-[#F43F5F]"
-                  onValueChange={(value) => setInitialInvestment(value[0])}
-                />
+                <Slider value={[initialInvestment]} min={1000} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setInitialInvestment(value[0])} />
               </div>
               <div className="w-20 text-right text-base md:text-lg font-semibold">${initialInvestment.toLocaleString()}</div>
-            </div>
-          )}
+            </div>}
 
           {/* Monthly Contribution Slider */}
-          {isMobile ? (
-            <div className="space-y-2">
+          {isMobile ? <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">Monthly</div>
                 <div className="text-base font-semibold">${monthlyContribution}</div>
               </div>
               <div>
-                <Slider
-                  value={[monthlyContribution]}
-                  min={100}
-                  max={2000}
-                  step={10}
-                  className="my-2"
-                  colorClass="bg-[#F43F5F]"
-                  onValueChange={(value) => setMonthlyContribution(value[0])}
-                />
+                <Slider value={[monthlyContribution]} min={100} max={2000} step={10} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setMonthlyContribution(value[0])} />
               </div>
-            </div>
-          ) : (
-            <div className="flex items-center gap-2">
+            </div> : <div className="flex items-center gap-2">
               <div className="w-24 text-base md:text-lg font-bold">Monthly</div>
               <div className="flex-1">
-                <Slider
-                  value={[monthlyContribution]}
-                  min={100}
-                  max={2000}
-                  step={10}
-                  className="my-2"
-                  colorClass="bg-[#F43F5F]"
-                  onValueChange={(value) => setMonthlyContribution(value[0])}
-                />
+                <Slider value={[monthlyContribution]} min={100} max={2000} step={10} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setMonthlyContribution(value[0])} />
               </div>
               <div className="w-20 text-right text-base md:text-lg font-semibold">${monthlyContribution}</div>
-            </div>
-          )}
+            </div>}
 
           {/* Starting Age Slider */}
-          {isMobile ? (
-            <div className="space-y-2">
+          {isMobile ? <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">Age</div>
                 <div className="text-base font-semibold">{startingAge}</div>
               </div>
               <div>
-                <Slider
-                  value={[startingAge]}
-                  min={18}
-                  max={50}
-                  step={1}
-                  className="my-2"
-                  colorClass="bg-[#F43F5F]"
-                  onValueChange={(value) => setStartingAge(value[0])}
-                />
+                <Slider value={[startingAge]} min={18} max={50} step={1} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setStartingAge(value[0])} />
               </div>
-            </div>
-          ) : (
-            <div className="flex items-center gap-2">
+            </div> : <div className="flex items-center gap-2">
               <div className="w-24 text-base md:text-lg font-bold">Age</div>
               <div className="flex-1">
-                <Slider
-                  value={[startingAge]}
-                  min={18}
-                  max={50}
-                  step={1}
-                  className="my-2"
-                  colorClass="bg-[#F43F5F]"
-                  onValueChange={(value) => setStartingAge(value[0])}
-                />
+                <Slider value={[startingAge]} min={18} max={50} step={1} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setStartingAge(value[0])} />
               </div>
               <div className="w-20 text-right text-base md:text-lg font-semibold">{startingAge}</div>
-            </div>
-          )}
+            </div>}
 
           {/* Wealth Levels Display */}
           <div className="mt-4 pt-4 border-t border-[#45463E]">
@@ -154,8 +90,6 @@ const FinancialCalculator = () => {
           </div>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>;
 };
-
 export default FinancialCalculator;

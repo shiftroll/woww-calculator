@@ -1,15 +1,15 @@
-
 import React from 'react';
-
 interface WealthLevelsProps {
   hnwiAge: number;
   vhnwiAge: number;
   uhnwiAge: number;
 }
-
-const WealthLevels: React.FC<WealthLevelsProps> = ({ hnwiAge, vhnwiAge, uhnwiAge }) => {
-  return (
-    <div className="space-y-4">
+const WealthLevels: React.FC<WealthLevelsProps> = ({
+  hnwiAge,
+  vhnwiAge,
+  uhnwiAge
+}) => {
+  return <div className="space-y-4">
       {/* High Net Worth Individual */}
       <div className="flex flex-col">
         <div className="flex items-baseline">
@@ -41,10 +41,8 @@ const WealthLevels: React.FC<WealthLevelsProps> = ({ hnwiAge, vhnwiAge, uhnwiAge
       </div>
 
       <div className="pt-2 text-center">
-        <h2 className="text-base md:text-xl font-bold">JOIN THE MOVEMENT</h2>
+        <h2 className="text-base font-bold my-[20px] md:text-3xl">JOIN THE MOVEMENT</h2>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default WealthLevels;
