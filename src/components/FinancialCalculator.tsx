@@ -22,7 +22,7 @@ const FinancialCalculator = () => {
   }, [initialInvestment, monthlyContribution, startingAge]);
   return <Card className="w-full mx-auto border-[#3E3F37] bg-[#31322C] text-gray-200 shadow-xl">
       <CardHeader className="pb-2 text-center">
-        <CardTitle className="text-xl font-bold text-gray-100 px-2 mt-2 md:text-3xl">
+        <CardTitle className="font-bold text-gray-100 mt-2 md:text-3xl px-[4px] text-2xl">
           Financial Future Calculator
         </CardTitle>
         <p className="text-xs md:text-sm text-gray-300 px-4 pb-2">

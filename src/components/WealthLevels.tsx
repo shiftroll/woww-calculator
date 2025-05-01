@@ -41,7 +41,7 @@ const WealthLevels: React.FC<WealthLevelsProps> = ({
       </div>
 
       <div className="pt-2 text-center">
-        <h2 className="text-base font-bold my-[20px] md:text-3xl">JOIN THE MOVEMENT</h2>
+        <h2 className="font-bold md:text-3xl my-[16px] text-3xl">JOIN THE MOVEMENT</h2>
       </div>
     </div>;
 };
