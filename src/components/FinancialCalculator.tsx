@@ -23,9 +23,9 @@ const FinancialCalculator = () => {
     setUhnwiAge(result.uhnwiAge);
   }, [initialInvestment, monthlyContribution, startingAge]);
   
-  return <Card className="w-full mx-auto border-gray-200 bg-white text-[#31322C] shadow-xl">
+  return <Card className="w-full mx-auto border-gray-200 bg-white text-[#31322C]">
       <CardHeader className="pb-2 text-center">
-        <CardTitle className="font-bold text-[#31322C] mt-2 md:text-3xl px-[4px] text-2xl">
+        <CardTitle className="font-bold text-[#31322C] mt-2 md:text-4xl px-[4px] text-3xl">
           Financial Future Calculator
         </CardTitle>
         <p className="text-xs md:text-sm text-gray-500 px-4 pb-2">
