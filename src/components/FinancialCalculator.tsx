@@ -1,9 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import WealthLevels from './WealthLevels';
 import { calculateFutureWealth } from '@/lib/financialUtils';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const FinancialCalculator = () => {
   const [initialInvestment, setInitialInvestment] = useState(2500);
   const [monthlyContribution, setMonthlyContribution] = useState(450);
@@ -20,12 +22,13 @@ const FinancialCalculator = () => {
     setVhnwiAge(result.vhnwiAge);
     setUhnwiAge(result.uhnwiAge);
   }, [initialInvestment, monthlyContribution, startingAge]);
-  return <Card className="w-full mx-auto border-[#3E3F37] bg-[#31322C] text-gray-200 shadow-xl">
+  
+  return <Card className="w-full mx-auto border-gray-200 bg-white text-[#31322C] shadow-xl">
       <CardHeader className="pb-2 text-center">
-        <CardTitle className="font-bold text-gray-100 mt-2 md:text-3xl px-[4px] text-2xl">
+        <CardTitle className="font-bold text-[#31322C] mt-2 md:text-3xl px-[4px] text-2xl">
           Financial Future Calculator
         </CardTitle>
-        <p className="text-xs md:text-sm text-gray-300 px-4 pb-2">
+        <p className="text-xs md:text-sm text-gray-500 px-4 pb-2">
           Based on Snobol fund's average annual return of 32.08%
         </p>
       </CardHeader>
@@ -84,7 +87,7 @@ const FinancialCalculator = () => {
             </div>}
 
           {/* Wealth Levels Display */}
-          <div className="mt-4 pt-4 border-t border-[#45463E]">
+          <div className="mt-4 pt-4 border-t border-gray-200">
             <div className="mb-2 text-lg md:text-xl font-bold">Results:</div>
             <WealthLevels hnwiAge={hnwiAge} vhnwiAge={vhnwiAge} uhnwiAge={uhnwiAge} />
           </div>
@@ -92,4 +95,5 @@ const FinancialCalculator = () => {
       </CardContent>
     </Card>;
 };
+
 export default FinancialCalculator;
