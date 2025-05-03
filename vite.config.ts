@@ -11,29 +11,12 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
+    mode === 'development' &&
+    componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/main.tsx'),
-      name: 'MyApp',
-      fileName: 'my-app',
-      formats: ['umd'],
-    },
-    rollupOptions: {
-      // external dependencies to avoid bundling (optional)
-      external: ['react', 'react-dom'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
-      },
     },
   },
 }));
