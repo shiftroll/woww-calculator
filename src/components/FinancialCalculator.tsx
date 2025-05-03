@@ -25,8 +25,8 @@ const FinancialCalculator = () => {
   
   return <Card className="w-full mx-auto border-gray-200 bg-white text-[#31322C]">
       <CardHeader className="pb-2 text-center">
-        <CardTitle className="font-bold text-[#31322C] mt-2 md:text-4xl px-[4px] text-3xl">
-          Financial Future Calculator
+        <CardTitle className="font-bold text-[#31322C] mt-2 md:text-4xl px-[2px] text-3xl">
+          Your Net Worth Calculator
         </CardTitle>
         <p className="text-xs md:text-sm text-gray-500 px-4 pb-2">
           Based on Snobol fund's average annual return of 32.08%
