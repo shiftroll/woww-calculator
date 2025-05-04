@@ -25,7 +25,6 @@ const FinancialCalculator = () => {
     setCurrentMonthlyPayment(result.currentMonthlyPayment);
     setConsolidatedPayment(result.consolidatedPayment);
     setMonthlySavings(result.monthlySavings);
-    setTotalSavings(result.totalSavings);
   }, [bnplDebt, creditCardDebt, carLoanDebt, personalLoanDebt]);
   
   return (
