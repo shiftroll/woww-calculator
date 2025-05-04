@@ -1,82 +1,41 @@
 
 /**
- * Financial calculation utilities
+ * Debt consolidation calculation utilities
  */
-
-// Annual rate of return (32.08%)
-const ANNUAL_RETURN_RATE = 0.3208;
-
-// Calculate monthly rate from annual rate
-const MONTHLY_RETURN_RATE = Math.pow(1 + ANNUAL_RETURN_RATE, 1/12) - 1;
 
 /**
- * Calculate how long it will take to reach a specific net worth
+ * Calculate debt consolidation savings and totals
  */
-const calculateTimeToReachNetWorth = (
-  initialInvestment: number,
-  monthlyContribution: number,
-  targetNetWorth: number
-): number => {
-  // If inputs are invalid, return 0
-  if (initialInvestment <= 0 || monthlyContribution <= 0) return 0;
-  
-  let currentValue = initialInvestment;
-  let months = 0;
-  const maxMonths = 1200; // Cap at 100 years to prevent infinite loops
-  
-  while (currentValue < targetNetWorth && months < maxMonths) {
-    // Add monthly contribution
-    currentValue += monthlyContribution;
-    
-    // Apply monthly growth
-    currentValue *= (1 + MONTHLY_RETURN_RATE);
-    
-    months++;
-  }
-  
-  // If we hit the max, consider it unattainable
-  if (months >= maxMonths) return 0;
-  
-  // Return years (rounded to nearest)
-  return Math.round(months / 12);
-};
-
-/**
- * Calculate future wealth levels based on input parameters
- */
-export const calculateFutureWealth = (
-  initialInvestment: number,
-  monthlyContribution: number,
-  startingAge: number
+export const calculateDebtConsolidation = (
+  bnplDebt: number,
+  creditCardDebt: number,
+  carLoanDebt: number,
+  personalLoanDebt: number,
+  homeLoanYear: number
 ) => {
-  // Net worth thresholds
-  const HNWI_THRESHOLD = 1000000;      // $1 million
-  const VHNWI_THRESHOLD = 5000000;     // $5 million
-  const UHNWI_THRESHOLD = 30000000;    // $30 million
+  // Calculate current total monthly payment (simplified for demo)
+  const bnplMonthly = bnplDebt * 0.05; // 5% minimum payment
+  const creditCardMonthly = creditCardDebt * 0.03; // 3% minimum payment
+  const carLoanMonthly = carLoanDebt * 0.02; // 2% monthly payment
+  const personalLoanMonthly = personalLoanDebt * 0.03; // 3% monthly payment
+  const homeLoanMonthly = homeLoanYear > 0 ? 1500 : 0; // Fixed amount for home loan if years > 0
   
-  // Calculate years required for each threshold
-  const yearsToHNWI = calculateTimeToReachNetWorth(
-    initialInvestment,
-    monthlyContribution,
-    HNWI_THRESHOLD
-  );
+  // Calculate total current monthly payment
+  const currentMonthlyPayment = Math.round(bnplMonthly + creditCardMonthly + carLoanMonthly + personalLoanMonthly + homeLoanMonthly);
   
-  const yearsToVHNWI = calculateTimeToReachNetWorth(
-    initialInvestment,
-    monthlyContribution,
-    VHNWI_THRESHOLD
-  );
+  // Calculate consolidated monthly payment (estimated as lower by about 20%)
+  const consolidatedPayment = Math.round(currentMonthlyPayment * 0.8);
   
-  const yearsToUHNWI = calculateTimeToReachNetWorth(
-    initialInvestment,
-    monthlyContribution,
-    UHNWI_THRESHOLD
-  );
+  // Monthly savings
+  const monthlySavings = currentMonthlyPayment - consolidatedPayment;
   
-  // Calculate ages when reaching each threshold
+  // Calculate total savings over 18.5 months (typical loan term)
+  const totalSavings = Math.round(monthlySavings * 18.5);
+  
   return {
-    hnwiAge: yearsToHNWI ? startingAge + yearsToHNWI : 0,
-    vhnwiAge: yearsToVHNWI ? startingAge + yearsToVHNWI : 0,
-    uhnwiAge: yearsToUHNWI ? startingAge + yearsToUHNWI : 0
+    currentMonthlyPayment,
+    consolidatedPayment,
+    monthlySavings,
+    totalSavings
   };
 };
