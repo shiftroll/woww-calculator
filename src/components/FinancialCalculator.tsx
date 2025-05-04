@@ -10,12 +10,9 @@ const FinancialCalculator = () => {
   const [creditCardDebt, setCreditCardDebt] = useState(450);
   const [carLoanDebt, setCarLoanDebt] = useState(2500);
   const [personalLoanDebt, setPersonalLoanDebt] = useState(450);
-  const [homeLoanYear, setHomeLoanYear] = useState(23);
   const [currentMonthlyPayment, setCurrentMonthlyPayment] = useState(0);
   const [consolidatedPayment, setConsolidatedPayment] = useState(0);
   const [monthlySavings, setMonthlySavings] = useState(0);
-  const [totalSavings, setTotalSavings] = useState(0);
-  const isMobile = useIsMobile();
 
   // Calculate consolidation results when inputs change
   useEffect(() => {
@@ -30,17 +27,14 @@ const FinancialCalculator = () => {
     setConsolidatedPayment(result.consolidatedPayment);
     setMonthlySavings(result.monthlySavings);
     setTotalSavings(result.totalSavings);
-  }, [bnplDebt, creditCardDebt, carLoanDebt, personalLoanDebt, homeLoanYear]);
+  }, [bnplDebt, creditCardDebt, carLoanDebt, personalLoanDebt]);
   
   return (
     <Card className="w-full mx-auto bg-[#31322C] text-white">
       <CardHeader className="pb-2 text-center">
         <CardTitle className="font-bold text-white mt-2 md:text-3xl px-[1px] text-3xl">
-          Convert your debts into one monthly payment
+          You currently owe:
         </CardTitle>
-        <p className="text-xl md:text-2xl text-white font-bold mt-8 mb-4">
-          Compare here:
-        </p>
       </CardHeader>
 
       <CardContent className="px-6 pb-10 pt-0">
@@ -90,32 +84,21 @@ const FinancialCalculator = () => {
               </div>
             </div>
 
-          {/* Home Loan Slider */}
-          <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <div className="text-base font-bold">Home Loan</div>
-                <div className="text-base font-semibold">{homeLoanYear.toLocaleString()}</div>
-              </div>
-              <div>
-                <Slider value={[homeLoanYear]} min={0} max={30} step={1} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setHomeLoanYear(value[0])} />
-              </div>
-            </div>
 
           {/* Results Display */}
           <div className="mt-12 pt-4 space-y-4">
             <div className="flex justify-between items-center">
-              <div className="text-xl md:text-xl font-bold">Current monthly payment:</div>
+              <div className="text-xl md:text-xl font-bold">Monthly total now:</div>
               <div className="text-xl md:text-xl font-bold">${currentMonthlyPayment.toLocaleString()}</div>
             </div>
             
             <div className="flex justify-between items-center">
-              <div className="text-xl md:text-xl font-bold">WOWW One Payment would be:</div>
+              <div className="text-xl md:text-xl font-bold">WOWW One Payment:</div>
               <div className="text-xl md:text-xl font-bold">${consolidatedPayment.toLocaleString()}</div>
             </div>
 
             <div className="mt-10 pt-4">
-              <div className="text-2xl md:text-3xl font-bold text-center">YOUR WIN MONTHLY: ${monthlySavings.toLocaleString()}</div>
-              <div className="text-2xl md:text-3xl font-bold text-center mt-4">TOTAL: ${totalSavings.toLocaleString()}</div>
+              <div className="text-2xl md:text-3xl font-bold text-center">You would save: ${monthlySavings.toLocaleString()}</div>
             </div>
           </div>
         </div>
