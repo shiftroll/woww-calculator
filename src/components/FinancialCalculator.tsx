@@ -49,21 +49,21 @@ const FinancialCalculator = () => {
       <CardContent className="px-6 pb-10 pt-0">
         <div className="space-y-8 mt-2">
           {/* BNPL Slider */}
-          <div className="flex items-center gap-4">
-            <div className="w-32 text-lg md:text-xl font-bold">BNPL</div>
-            <div className="flex-1 relative">
-              <Slider 
-                value={[bnplDebt]} 
-                min={0} 
-                max={10000} 
-                step={100} 
-                className="my-2" 
-                colorClass="bg-[#ea384c]" 
-                onValueChange={value => setBnplDebt(value[0])} 
-              />
-            </div>
-            <div className="w-20 text-right text-lg md:text-xl font-bold">${bnplDebt.toLocaleString()}</div>
-          </div>
+                  {isMobile ? <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <div className="text-base font-bold">BNPL</div>
+                <div className="text-base font-semibold">${bnplDebt.toLocaleString()}</div>
+              </div>
+              <div>
+                <Slider value={[bnplDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setBnplDebt(value[0])} />
+              </div>
+            </div> : <div className="flex items-center gap-2">
+              <div className="w-24 text-base md:text-lg font-bold">BNPL</div>
+              <div className="flex-1">
+                <Slider value={[bnplDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setBnplDebt(value[0])} />
+              </div>
+              <div className="w-20 text-right text-base md:text-lg font-semibold">${bnplDebt.toLocaleString()}</div>
+            </div>}
 
           {/* Credit Cards Slider */}
           <div className="flex items-center gap-4">
