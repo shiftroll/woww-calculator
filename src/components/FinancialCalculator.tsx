@@ -28,7 +28,7 @@ const FinancialCalculator = () => {
   }, [bnplDebt, creditCardDebt, carLoanDebt, personalLoanDebt]);
   
   return (
-    <Card className="w-full mx-auto bg-[#31322C] text-white">
+    <Card className="w-full mx-auto bg-[#4B4B32] text-white">
       <CardHeader className="pb-2 text-center">
         <CardTitle className="font-bold text-white mt-2 md:text-3xl px-[1px] text-3xl">
           You currently owe:
