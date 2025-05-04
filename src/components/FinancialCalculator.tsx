@@ -36,10 +36,7 @@ const FinancialCalculator = () => {
     <Card className="w-full mx-auto bg-[#31322C] text-white">
       <CardHeader className="pb-2 text-center">
         <CardTitle className="font-bold text-white mt-2 md:text-4xl px-[2px] text-3xl">
-          Convert your multiple debts
-        </CardTitle>
-        <CardTitle className="font-bold text-white md:text-4xl px-[2px] text-3xl mb-6">
-          into one monthly payment
+          Convert your multiple debts into one monthly payment
         </CardTitle>
         <p className="text-xl md:text-2xl text-white font-bold mt-8 mb-4">
           Compare here:
