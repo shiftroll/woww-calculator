@@ -12,6 +12,7 @@ const FinancialCalculator = () => {
   const [currentMonthlyPayment, setCurrentMonthlyPayment] = useState(0);
   const [consolidatedPayment, setConsolidatedPayment] = useState(0);
   const [monthlySavings, setMonthlySavings] = useState(0);
+  
 
   // Calculate consolidation results when inputs change
   useEffect(() => {
