@@ -114,8 +114,8 @@ const FinancialCalculator = () => {
             </div>
 
             <div className="mt-10 pt-4">
-              <div className="text-3xl md:text-4xl font-bold text-center">YOUR WIN MONTHLY: ${monthlySavings.toLocaleString()}</div>
-              <div className="text-3xl md:text-4xl font-bold text-center mt-4">TOTAL: ${totalSavings.toLocaleString()}</div>
+              <div className="text-2xl md:text-3xl font-bold text-center">YOUR WIN MONTHLY: ${monthlySavings.toLocaleString()}</div>
+              <div className="text-2xl md:text-3xl font-bold text-center mt-4">TOTAL: ${totalSavings.toLocaleString()}</div>
             </div>
           </div>
         </div>
