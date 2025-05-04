@@ -49,7 +49,7 @@ const FinancialCalculator = () => {
       <CardContent className="px-6 pb-10 pt-0">
         <div className="space-y-8 mt-2">
           {/* BNPL Slider */}
-          {isMobile ? <div className="space-y-2">
+          <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">BNPL</div>
                 <div className="text-base font-semibold">${bnplDebt.toLocaleString()}</div>
@@ -57,17 +57,11 @@ const FinancialCalculator = () => {
               <div>
                 <Slider value={[bnplDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setBnplDebt(value[0])} />
               </div>
-            </div> : <div className="flex items-center gap-2">
-              <div className="w-24 text-base md:text-lg font-bold">BNPL</div>
-              <div className="flex-1">
-                <Slider value={[bnplDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setBnplDebt(value[0])} />
-              </div>
-              <div className="w-20 text-right text-base md:text-lg font-semibold">${bnplDebt.toLocaleString()}</div>
-            </div>}
+            </div>
 
           {/* Credit Cards Slider */}
           {/* BNPL Slider */}
-          {isMobile ? <div className="space-y-2">
+          <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">Credit Card</div>
                 <div className="text-base font-semibold">${creditCardDebt.toLocaleString()}</div>
@@ -75,16 +69,10 @@ const FinancialCalculator = () => {
               <div>
                 <Slider value={[creditCardDebt]} min={0} max={2000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCreditCardDebt(value[0])} />
               </div>
-            </div> : <div className="flex items-center gap-2">
-              <div className="w-24 text-base md:text-lg font-bold">Credit Card</div>
-              <div className="flex-1">
-                <Slider value={[creditCardDebt]} min={0} max={2000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCreditCardDebt(value[0])} />
-              </div>
-              <div className="w-20 text-right text-base md:text-lg font-semibold">${creditCardDebt.toLocaleString()}</div>
-            </div>}
+            </div>
 
           {/* Car Loan Slider */}
-          {isMobile ? <div className="space-y-2">
+          <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">Car Loan</div>
                 <div className="text-base font-semibold">${carLoanDebt.toLocaleString()}</div>
@@ -92,16 +80,10 @@ const FinancialCalculator = () => {
               <div>
                 <Slider value={[carLoanDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCarLoanDebt(value[0])} />
               </div>
-            </div> : <div className="flex items-center gap-2">
-              <div className="w-24 text-base md:text-lg font-bold">Car Loan</div>
-              <div className="flex-1">
-                <Slider value={[carLoanDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCarLoanDebt(value[0])} />
-              </div>
-              <div className="w-20 text-right text-base md:text-lg font-semibold">${carLoanDebt.toLocaleString()}</div>
-            </div>}
+            </div>
 
           {/* Personal Loans Slider */}
-          {isMobile ? <div className="space-y-2">
+          <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">Personal Loan</div>
                 <div className="text-base font-semibold">${personalLoanDebt.toLocaleString()}</div>
@@ -109,16 +91,10 @@ const FinancialCalculator = () => {
               <div>
                 <Slider value={[personalLoanDebt]} min={0} max={2000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setPersonalLoanDebt(value[0])} />
               </div>
-            </div> : <div className="flex items-center gap-2">
-              <div className="w-24 text-base md:text-lg font-bold">Personal Loan</div>
-              <div className="flex-1">
-                <Slider value={[personalLoanDebt]} min={0} max={2000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setPersonalLoanDebt(value[0])} />
-              </div>
-              <div className="w-20 text-right text-base md:text-lg font-semibold">${personalLoanDebt.toLocaleString()}</div>
-            </div>}
+            </div>
 
           {/* Home Loan Slider */}
-          {isMobile ? <div className="space-y-2">
+          <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="text-base font-bold">Home Loan</div>
                 <div className="text-base font-semibold">{homeLoanYear.toLocaleString()}</div>
@@ -126,13 +102,7 @@ const FinancialCalculator = () => {
               <div>
                 <Slider value={[homeLoanYear]} min={0} max={30} step={1} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setHomeLoanYear(value[0])} />
               </div>
-            </div> : <div className="flex items-center gap-2">
-              <div className="w-24 text-base md:text-lg font-bold">Home Loan</div>
-              <div className="flex-1">
-                <Slider value={[homeLoanYear]} min={0} max={30} step={1} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setHomeLoanYear(value[0])} />
-              </div>
-              <div className="w-20 text-right text-base md:text-lg font-semibold">{homeLoanYear.toLocaleString()}</div>
-            </div>}
+            </div>
 
           {/* Results Display */}
           <div className="mt-12 pt-4 space-y-4">
