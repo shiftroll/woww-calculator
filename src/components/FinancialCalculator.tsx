@@ -104,13 +104,13 @@ const FinancialCalculator = () => {
           {/* Results Display */}
           <div className="mt-12 pt-4 space-y-4">
             <div className="flex justify-between items-center">
-              <div className="text-xl md:text-2xl font-bold">Current monthly payment:</div>
-              <div className="text-xl md:text-2xl font-bold">${currentMonthlyPayment.toLocaleString()}</div>
+              <div className="text-xl md:text-xl font-bold">Current monthly payment:</div>
+              <div className="text-xl md:text-xl font-bold">${currentMonthlyPayment.toLocaleString()}</div>
             </div>
             
             <div className="flex justify-between items-center">
-              <div className="text-xl md:text-2xl font-bold">WOWW One Payment would be:</div>
-              <div className="text-xl md:text-2xl font-bold">${consolidatedPayment.toLocaleString()}</div>
+              <div className="text-xl md:text-xl font-bold">WOWW One Payment would be:</div>
+              <div className="text-xl md:text-xl font-bold">${consolidatedPayment.toLocaleString()}</div>
             </div>
 
             <div className="mt-10 pt-4">
