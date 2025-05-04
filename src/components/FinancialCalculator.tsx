@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { calculateDebtConsolidation } from '@/lib/financialUtils';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const FinancialCalculator = () => {
   const [bnplDebt, setBnplDebt] = useState(2500);
@@ -21,7 +20,6 @@ const FinancialCalculator = () => {
       creditCardDebt,
       carLoanDebt,
       personalLoanDebt,
-      homeLoanYear
     );
     setCurrentMonthlyPayment(result.currentMonthlyPayment);
     setConsolidatedPayment(result.consolidatedPayment);
