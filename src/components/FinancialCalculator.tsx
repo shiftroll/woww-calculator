@@ -33,7 +33,7 @@ const FinancialCalculator = () => {
   }, [bnplDebt, creditCardDebt, carLoanDebt, personalLoanDebt, homeLoanYear]);
   
   return (
-    <Card className="w-full mx-auto bg-[#333333] text-white">
+    <Card className="w-full mx-auto bg-[#31322C] text-white">
       <CardHeader className="pb-2 text-center">
         <CardTitle className="font-bold text-white mt-2 md:text-4xl px-[2px] text-3xl">
           Convert your multiple debts
