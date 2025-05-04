@@ -60,42 +60,42 @@
   /* Large screens - 1920px and up */
   @media (min-width: 1920px) {
     .min-h-screen {
-      min-height: 36rem;
+      min-height: 30svw;
     }
   }
 
   /* Desktop - 1440px to 1919px */
   @media (min-width: 1440px) and (max-width: 1919px) {
     .min-h-screen {
-      min-height: 36rem;
+      min-height: 40svw;
     }
   }
 
   /* Small Desktop - 991px to 1439px */
   @media (min-width: 991px) and (max-width: 1439px) {
     .min-h-screen {
-      min-height: 36rem;
+      min-height: 43svw;
     }
   }
 
   /* Tablet - 768px to 991px */
   @media (min-width: 768px) and (max-width: 991px) {
     .min-h-screen {
-      min-height: 36rem;
+      min-height: 76svw;
     }
   }
 
   /* Large Mobile - 479px to 767px */
   @media (min-width: 479px) and (max-width: 767px) {
     .min-h-screen {
-      min-height: 36rem;
+      min-height: 103vw;
     }
   }
 
   /* Small Mobile - up to 478px */
   @media (max-width: 478px) {
     .min-h-screen {
-      min-height: 42rem;
+      min-height: 218vw;
     }
   }
 }
