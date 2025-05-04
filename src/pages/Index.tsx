@@ -3,13 +3,6 @@ import React from 'react';
 import FinancialCalculator from '@/components/FinancialCalculator';
 
 const Index = () => {
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'auto'; // cleanup on unmount
-    };
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#31322C] p-3">
       <div className="w-full max-w-4xl">
