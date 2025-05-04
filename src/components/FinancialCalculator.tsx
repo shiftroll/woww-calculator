@@ -44,7 +44,7 @@ const FinancialCalculator = () => {
                 <div className="text-base font-semibold">${bnplDebt.toLocaleString()}</div>
               </div>
               <div>
-                <Slider value={[bnplDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setBnplDebt(value[0])} />
+                <Slider value={[bnplDebt]} min={0} max={40000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setBnplDebt(value[0])} />
               </div>
             </div>
 
@@ -56,7 +56,7 @@ const FinancialCalculator = () => {
                 <div className="text-base font-semibold">${creditCardDebt.toLocaleString()}</div>
               </div>
               <div>
-                <Slider value={[creditCardDebt]} min={0} max={2000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCreditCardDebt(value[0])} />
+                <Slider value={[creditCardDebt]} min={0} max={40000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCreditCardDebt(value[0])} />
               </div>
             </div>
 
@@ -67,7 +67,7 @@ const FinancialCalculator = () => {
                 <div className="text-base font-semibold">${carLoanDebt.toLocaleString()}</div>
               </div>
               <div>
-                <Slider value={[carLoanDebt]} min={0} max={10000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCarLoanDebt(value[0])} />
+                <Slider value={[carLoanDebt]} min={0} max={40000} step={100} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setCarLoanDebt(value[0])} />
               </div>
             </div>
 
@@ -78,7 +78,7 @@ const FinancialCalculator = () => {
                 <div className="text-base font-semibold">${personalLoanDebt.toLocaleString()}</div>
               </div>
               <div>
-                <Slider value={[personalLoanDebt]} min={0} max={2000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setPersonalLoanDebt(value[0])} />
+                <Slider value={[personalLoanDebt]} min={0} max={40000} step={50} className="my-2" colorClass="bg-[#F43F5F]" onValueChange={value => setPersonalLoanDebt(value[0])} />
               </div>
             </div>
 
